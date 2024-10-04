@@ -1,0 +1,9 @@
+#task-form{
+  background: url('../assets/task-bg.jpg') center no-repeat;
+  background-size: cover;
+}
+
+#expense-form{
+  background: url('../assets/expense-bg.jpg') center no-repeat;
+  background-size: cover;
+}
