@@ -9,88 +9,95 @@ import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import './main.css'
 import {Link} from 'react-router-dom'
+import organised from '../assets/organised.jpg'
 
 function Index() {
   return (
-     <div  id="allIndex" className='flex flex-col text-white h-screen gap-10 justify-between'>
-      <nav className='bg-zinc-200/50 h-[40px] justify-between flex px-3 py-4 items-center'>
-        <span className='text-white text-2xl'>Track<span className='text-red-800'>Max</span></span>
-      <div className='flex justify-between w-[350px]'>
-        <span>Features</span>
-        <span>About</span>
-        <span>More Products</span>
-      </div>
-      </nav>
-     <div className="w-screen   m-auto  flex  gap-[35px] justify-center">
-      <div className= 'h-[430px]  bg-zinc-700/50 text-slate-50 flex flex-col w-[270px]   p-5 justify-between shadow-red-500 shadow-lg rounded-xl text-[14px]'>
-        <img src={indexOne} alt=""  className='w-fit block m-auto rounded-xl'/>
-        {/* <span className='font-semibold'>
-        Manage Your Time & Money Efficiently with TrackMax
-        </span> */}
-        {/* <div className='flex flex-col justify-center  text-gray-100'> */}
-          <span className='w-full block bg-red-500 rounded-xl p-1 text-center'>Sign in with Email</span>
-          <div className='w-full flex justify-center m-auto gap-4'>
-            <span className='w-[100px] text-center border-2 border-zinc-700 p-1 rounded-md text-gray-100'>Apple ID</span>
-            <span  className='w-[100px] text-center border-2 border-zinc-700 p-1 rounded-md'>Google</span>
-          {/* </div> */}
+     <div className=' bg-darkBlue text-slate-200 '>
+      <header className='flex p-6 justify-between items-center bg-darkBlue text-[20px]'>
+        <div className='text-white text-3xl'>Track<span className='text-red-700'>Max</span></div>
+        <div className='flex gap-7'>
+          <span className='hover:text-red-700'>Home</span>
+          <span className='hover:text-red-700' >Services</span>
+          <span className='hover:text-red-700'>Features</span>
+          <span className='hover:text-red-700'>About Us</span>
         </div>
-        <small className='text-zinc-200'>By contining you agree to the terms and service</small>
-      </div>
-      <div className= 'h-[430px] bg-zinc-700/50 text-slate-50 flex flex-col w-[270px]  p-5 justify-between shadow-red-500 shadow-lg rounded-xl  '>
-       <div>
-       <img src={drew} alt=""  className='w-[120px] h-[100px] block m-auto rounded-full object-cover'/>
-        <span className='font-semibold text-center block m-auto'>
-         John Doe
-        </span>
-        <span className='w-[50%] text-center p-1 block m-auto rounded-xl bg-red-500'>Edit</span>
-        {/* <small className='text-center block m-auto'>johndoe@gmail.com</small> */}
-       </div>
-        <div className="buttons flex flex-col gap-2">
-          <div className="buttons flex flex-col gap-2">
-            {/* <span className='text-[14px]'> Notification</span> */}
-            <div className='flex justify-between items-center bg-zinc-700 py-2 px-2 rounded-xl'>
-              <span  className='text-[14px]'>Turn on Notifications</span>
-              <IoIosNotificationsOutline />
-            </div>
-          </div >
-          <div className="buttons flex flex-col gap-2">
-            {/* <span  className='text-[14px]'>Invite Link</span> */}
-            <div className='flex justify-between items-center bg-zinc-700  py-1 px-2 rounded-xl'>
-              <span  className='text-[14px]'>Invite People</span>
-              <span className='w-[80px] text-center p-1 rounded-xl bg-red-500 text-[14px]'>Invite</span>
-            </div>
+        <div className='flex gap-7'>
+          <Link to='/login' className='p-3 w-[100px] text-center hover:border hover:border-slate-200 rounded-xl'>Login</Link>
+          <Link to='/register' className='p-3 w-[100px] text-center hover:border hover:border-white rounded-xl'>Sign Up</Link>
+          </div>
+      </header>
+      <hr className='text-slate-500'/>
+      <main className='flex flex-col gap-6' >
+        <div className="hero flex justify-between items-center p-6">
+          <div className="hero-ctn flex-1 flex flex-col gap-5">
+            <h2 className='text-4xl font-bold text-white'>All The Productivity 
+              <br />needed are available on <br />
+              Track<span className='text-red-700'>Max</span></h2>
+            <p>Get all the convience you need to get your <br /> day started with TrackMax</p>
+              <div className='flex'>
+                <div className='flex flex-col border-right border-slate-200 pr-5' >
+                  <span className=' text-3xl '>30k+</span>
+                  <span >Active Users</span>
+                </div>
+                <div className='flex flex-col'>
+                  <span className='text-center text-3xl'>400k+</span>
+                  <span>Downloaded</span>
+                </div>
+              </div>
+              <div className='flex  gap-10'>
+                <span className='p-3 text-2xl border-white border rounded-lg'>Get Started</span>
+                <span className='p-3 text-2xl border-white border rounded-lg'>How it work</span>
+              </div>
+          </div>
+          <div className="flex-1 h-[80vh] self-center">
+            <img src={organised} className='h-full block m-auto w-full object-cover' alt="" />
           </div>
         </div>
-        <div className='flex justify-between'>
-        <IoHomeOutline className='w-[20px]' />
-        <CiCirclePlus className='w-[20px]' />
-        <MdEventNote className='w-[20px]'/>
+        <div className="about-us h-screen ">
+          <div className='h-full w-full bg-darkBlue/70'>
+          <div className='text-[20px] w-[70%] h-full m-auto flex flex-col justify-center gap-10'>
+            <div className='flex flex-col gap-3'>
+            <h2 className='text-3xl font-bold text-center text-red-700'>How It Works</h2>
+            <hr />
+            </div>
+            <p className=' text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, distinctio veniam illo quas provident ipsam recusandae velit quos fugiat quod quam repellat consectetur reiciendis culpa similique aspernatur error. Commodi, earum. Beatae sapiente nesciunt doloribus blanditiis laboriosam veniam unde nam incidunt modi. Voluptatibus provident facilis eius labore accusamus. Molestiae nam aperiam consequuntur nihil maxime ducimus perspiciatis deserunt fugiat aliquid? Praesentium blanditiis quod culpa excepturi! Provident itaque molestiae est accusamus dignissimos voluptatem.</p>
+          </div>
+          
+          </div>
         </div>
+        <div className="features p-6">
+          <div className="w-[70%] text-[20px] flex flex-col gap-5 m-auto">
+          <div className='flex flex-col gap-4'>
+          <h2 className='text-center text-3xl '>Our Features</h2>
+          <hr />
+          </div>
+          <div className=' flex flex-col gap-2'>
+            <h3 className='font-bold text-red-500'>Progress Tracking</h3>
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui veritatis, vero quo in nesciunt voluptatibus asperiores distinctio dicta aliquid maiores inventore neque odio possimus totam facere. Quasi, alias voluptates.</p>
+          </div>
+          <div className=' flex flex-col gap-2'>
+            <h3 className='font-bold text-red-500'>Time Management</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui veritatis, vero quo in nesciunt voluptatibus asperiores distinctio dicta aliquid maiores inventore neque odio possimus totam facere. Quasi, alias voluptates.</p>
+          </div>
+          <div className=' flex flex-col gap-2'>
+            <h3 className='font-bold text-red-500'>Collaboration</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque qui veritatis, vero quo in nesciunt voluptatibus asperiores distinctio dicta aliquid maiores inventore neque odio possimus totam facere. Quasi, alias voluptates.</p>
+          </div>
+          </div>
+        </div>
+      </main>
+      <footer className='p-5 flex justify-between'>
+      <div className='flex gap-3'>
+        &copy;
+        <div><span className='text-red-700'>Kingswrld,</span> All rights reserved</div>
       </div>
-      <div className= 'h-[430px]  bg-zinc-700/50 text-slate-50 flex flex-col w-[270px] p-5 justify-between shadow-red-500 shadow-lg rounded-xl text-[14px] gap-3'>
-        <img src={chart} alt=""  className='w-fit block m-auto rounded-xl'/>
-          <span className='font-semibold'>
-          Features
-          </span>
-          {/* <div className='flex flex-col  gap-3'> */}
-            {/* <div className='p-2 bg-red-500  rounded-lg'>
-              <span>Task Management</span>
-            </div> */}
-            <div className='p-2 bg-red-500 rounded-lg'>
-              <span>Expense Tracking</span>
-            </div>
-            <div className='p-2 bg-red-500  rounded-lg'>
-              <span>Goal Setting & Progress Tracking</span>
-            </div>
-          {/* </div>  */}
-        <span>Register Today!</span>  
+      <div className='flex flex-col '>
+        <span>Template By <span className='text-red-700'> HTML Codex</span></span>
+        <span>Copied from <span className='text-red-700'> ThemeWagon </span> </span>
       </div>
+    </footer>
      </div>
-     <div className='flex text-white m-auto  w-[300px] text-[20px] justify-between items-center'>
-      <Link to='/register' className='w-[100px] p-1 bg-red-500 text-center rounded-xl'>Register</Link>
-      <Link to='/login' className='w-[100px] p-1 bg-red-500 text-center rounded-xl'>Login</Link>
-     </div>
-    </div>
   )
 }
 

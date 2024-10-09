@@ -13,7 +13,9 @@ import { FaCaretLeft } from "react-icons/fa6";
 import { FaCaretUp } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
 import { FaXmark } from "react-icons/fa6";
-
+import { IoMdStats } from "react-icons/io";
+import { CiCirclePlus } from "react-icons/ci";
+import { CiAlarmOn } from "react-icons/ci";
 
 
 
@@ -28,9 +30,9 @@ function Dashboard() {
       {
         label: 'Expenses Tracker $',
         data: [],
-        backgroundColor: 'rgba(75,192,192,0.2)',
+        backgroundColor: 'rgba(75,192,192,0.2)', 
         borderColor: 'rgba(75,192,192,1)',
-        borderWidth: 1,
+        borderWidth: 2,
         fill: true,
       },
     ],
@@ -47,7 +49,7 @@ function Dashboard() {
           data: expense.map((data) => data.expense),
           backgroundColor: 'rgba(255,0,0,0.4)',
           borderColor: 'rgba(115,112,124,0.4)',
-          borderWidth: 1,
+          borderWidth: 2,
           fill: true,
         },
       ],
@@ -77,7 +79,7 @@ function Dashboard() {
 
   console.log(newValue)
   return (
-   <div className='bg-black text-slate-400 ' >
+   <div className='bg-black text-slate-500 ' >
     <nav className='bg-darkBlue flex justify-between p-5'>
       <div className='flex  gap-2 items-center'>
         <span className='p-3 rounded-full bg-black hover:text-red-700'><GiHamburgerMenu /></span>  
@@ -159,15 +161,108 @@ function Dashboard() {
     </nav>
     <main className='p-5 flex flex-col gap-8'>
    <div>
-    <div>
-
+    <div className='flex gap-6 text-[20px] items-center'>
+     <div className='flex-1 flex gap-5 items-center'> 
+      <div className='flex justify-between flex-1 bg-darkBlue items-center p-6 rounded-xl' >
+        < IoMdStats className='text-red-700 text-[100px]' />
+        <div className='flex flex-col gap-2 '>
+          <span>Projects Progress</span>
+          <span className='text-[14px]  text-red-700'>60% Completed</span>
+        </div>
+      </div>
+      <div className='flex justify-between gap-5 flex-1 bg-darkBlue items-center p-6 rounded-xl text-center'>
+      < CiAlarmOn className='text-red-700 text-[100px]' />
+        <div className='flex flex-col gap-2'>
+          <span>Ongoing Projects</span>
+          <span className='  text-red-700 '>4</span>
+        </div>
+      </div>
+     </div>
+     <div className='flex-1 flex gap-4 text-center items-center'>
+      <div className='flex-1 flex flex-col gap-3 bg-darkBlue p-6 rounded-xl'>
+        <span> Create a new Project </span>
+        <CiCirclePlus className='text-red-700 text-[50px]  text-center block m-auto ' />
+      </div>
+      <div className='flex-1 bg-darkBlue p-6 rounded-xl'>
+       <span>Upcoming Task</span>
+       <div className='text-[14px] text-red-700 flex flex-col'>
+        <span>Create a website </span>
+        <span>Learn React</span>
+        <span>Learn more javascript</span>
+       </div>
+      </div>
+      
+     </div>
     </div>
   </div>
    <div className='flex gap-6'>
     <div className='flex-1 w-[80%] bg-darkBlue p-6'><LineChart data={newChart} /></div>
     <div className='flex-1 w-[80%] bg-darkBlue p-6'><LineChart data={newChart} /></div>
    </div>
-   <div></div>
+   <div>
+    <div className='bg-darkBlue p-6 flex flex-col gap-10'>
+      <div className='text-[20px] flex justify-between'>
+        <span className='block'>Recent Projects</span>
+        <span className='text-red-700 block'>Show All</span>
+      </div>
+      <table className='bg-darkBlue w-full text-center border border-black'>
+        <tr className='border  font-bold text-white'>
+          <th className='border border-slate-700 p-3'><input type="checkbox" /></th>
+          <th className='border border-slate-700  p-3'>Date Created</th>
+          <th className='border border-slate-700  p-3'>Task</th>
+          <th className='border border-slate-700  p-3'>Cost</th>
+          <th className='border border-slate-700  p-3' >Project Name</th>
+          <th className='border border-slate-700  p-3'>Due Date</th>
+          <th className='border border-slate-700  p-3'>Assigned To</th>
+        </tr>
+        <tr>
+          <td className='border border-slate-700  p-3'><input type="checkbox" /></td>
+          <td className='border border-slate-700  p-3'>Jan 1st 2024</td>
+          <td className='border border-slate-700  p-3'>Build a Website</td>
+          <td className='border border-slate-700  p-3'>$4000</td>
+          <td className='border border-slate-700  p-3'>TrackMax</td>
+          <td className='border border-slate-700  p-3'>Oct 15th, 2024</td>
+          <td className='border border-slate-700  p-3'>Vivanne</td>
+        </tr>
+        <tr>
+          <td className='border border-slate-700  p-3'><input type="checkbox" /></td>
+          <td className='border border-slate-700  p-3'>Jan 1st 2024</td>
+          <td className='border border-slate-700  p-3'>Build a Website</td>
+          <td className='border border-slate-700  p-3'>$4000</td>
+          <td className='border border-slate-700  p-3'>TrackMax</td>
+          <td className='border border-slate-700  p-3'>Oct 15th, 2024</td>
+          <td className='border border-slate-700  p-3'>Vivanne</td>
+        </tr>
+        <tr>
+          <td className='border border-slate-700  p-3'><input type="checkbox" /></td>
+          <td className='border border-slate-700  p-3'>Jan 1st 2024</td>
+          <td className='border border-slate-700  p-3'>Build a Website</td>
+          <td className='border border-slate-700  p-3'>$4000</td>
+          <td className='border border-slate-700  p-3'>TrackMax</td>
+          <td className='border border-slate-700  p-3'>Oct 15th, 2024</td>
+          <td className='border border-slate-700  p-3'>Vivanne</td>
+        </tr>
+        <tr>
+          <td className='border border-slate-700  p-3'><input type="checkbox" /></td>
+          <td className='border border-slate-700  p-3'>Jan 1st 2024</td>
+          <td className='border border-slate-700  p-3'>Build a Website</td>
+          <td className='border border-slate-700  p-3'>$4000</td>
+          <td className='border border-slate-700  p-3'>TrackMax</td>
+          <td className='border border-slate-700  p-3'>Oct 15th, 2024</td>
+          <td className='border border-slate-700  p-3'>Vivanne</td>
+        </tr>
+        <tr>
+          <td className='border border-slate-700  p-3'><input type="checkbox" /></td>
+          <td className='border border-slate-700  p-3'>Jan 1st 2024</td>
+          <td className='border border-slate-700  p-3'>Build a Website</td>
+          <td className='border border-slate-700  p-3'>$4000</td>
+          <td className='border border-slate-700  p-3'>TrackMax</td>
+          <td className='border border-slate-700  p-3'>Oct 15th, 2024</td>
+          <td className='border border-slate-700  p-3'>Vivanne</td>
+        </tr>
+      </table>
+    </div>
+   </div>
    <div className='flex items-center'> 
     <div className='flex-1 flex flex-col gap-3 max-w-sm bg-darkBlue   py-8 px-4 text-[15px] h-[390px]'>
      <div className='flex justify-between'>
@@ -496,6 +591,16 @@ function Dashboard() {
     </div>
    </div>
     </main>
+    <footer className='p-5 flex justify-between'>
+      <div className='flex gap-3'>
+        &copy;
+        <div><span className='text-red-700'>Kingswrld,</span> All rights reserved</div>
+      </div>
+      <div className='flex flex-col '>
+        <span>Template By <span className='text-red-700'> HTML Codex</span></span>
+        <span>Copied from <span className='text-red-700'> ThemeWagon </span> </span>
+      </div>
+    </footer>
    </div>
   );
 }
