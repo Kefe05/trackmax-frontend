@@ -9,6 +9,7 @@ import Login from './Forms/login'
 import Register from './Forms/register'
 import AddExpense from './Forms/addExpense'
 import Index from './index'
+import Project from './project/project'
 
 function App() {
   const router = createBrowserRouter(
@@ -22,6 +23,7 @@ function App() {
       <Route path='/add-new-expense' exact element={<AddExpense/>} />
       <Route path='/login' exact element={<Login />} />
       <Route path='/register' exact element={<Register />} />
+      <Route path='/projects' exact element={<Project />} />
      </Route>
     )
   )

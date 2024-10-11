@@ -2,27 +2,24 @@
 import React, { useState, useEffect } from 'react';
 import LineChart from '../charts/line';
 import { expense, tasks } from '../charts/data';
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-router-dom';
-import { CgProfile } from "react-icons/cg";
-import { CiSettings } from "react-icons/ci";
-import { IoIosNotifications } from "react-icons/io";
-import { FaCaretDown } from "react-icons/fa6";
+import { CiSettings } from 'react-icons/ci';
 import { FaCaretRight } from "react-icons/fa6";
 import { FaCaretLeft } from "react-icons/fa6";
-import { FaCaretUp } from "react-icons/fa";
-import { LuMail } from "react-icons/lu";
 import { FaXmark } from "react-icons/fa6";
 import { IoMdStats } from "react-icons/io";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiAlarmOn } from "react-icons/ci";
+import { CgProfile } from 'react-icons/cg';
+import Header from '../common/header';
+import Footer from '../common/Footer';
+
 
 
 
 function Dashboard() {
-  const [showNav1, setShowNav1] = useState(false)
-  const [showNav2, setShowNav2] = useState(false)
-  const [showNav3, setShowNav3] = useState(false)
+  const [showNew, setShowNew] = useState(false)
+  const [showNewProject, setShowNewProject] = useState(false)
   const [newValue, setNewValue] = useState({ username: 'Guest' });
   const [newChart, setNewChart] = useState({
     labels: [], // Initially empty arrays
@@ -79,86 +76,9 @@ function Dashboard() {
 
   console.log(newValue)
   return (
-   <div className='bg-black text-slate-500 ' >
-    <nav className='bg-darkBlue flex justify-between p-5'>
-      <div className='flex  gap-2 items-center'>
-        <span className='p-3 rounded-full bg-black hover:text-red-700'><GiHamburgerMenu /></span>  
-        <input type="text" className='bg-black py-2 px-4 rounded-md text-[16px] focus:outline-red-900/50 focus:outline-4 outline-none' placeholder='Search'/>
-      </div>
-      <div className='flex gap-6 items-center text-[17px]'>
-        <div className='relative'>
-          <div className='hover:text-red-700 flex gap-2 items-center 'onClick={() => setShowNav1((prev) => !prev)}>
-            <span className='p-3 rounded-full text-xl bg-black'><LuMail /></span>
-            <span>Message</span>
-           {showNav1? <FaCaretUp /> : <FaCaretDown/> }
-          </div>
-          <div className={`absolute right-0 w-[240px] bg-darkBlue p-4 ${showNav1? '' : 'hidden'}` }>
-            <div className='flex items-start gap-2 border-b border-slate-400 p-3'>
-              <CgProfile className='text-4xl'/>
-              <div className='flex flex-col gap-1 '>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-              <hr />
-            </div>
-            <div className='flex items-start gap-2 border-b border-slate-400 p-3'>
-              <CgProfile className='text-4xl'/>
-              <div className='flex flex-col gap-1 '>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-            </div>
-            <div className='flex items-start gap-2 border-b border-slate-400 p-3'>
-              <CgProfile className='text-4xl'/>
-              <div className='flex flex-col gap-1 '>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='relative'>
-          <div className='hover:text-red-700  flex  gap-2 items-center ' onClick={() => setShowNav2((prev) => !prev)}>
-            <span className='p-3 rounded-full bg-black text-xl'><IoIosNotifications /></span>
-            <span>Notification</span>
-            {showNav2? <FaCaretUp /> : <FaCaretDown/> }
-          </div>
-          <div className={`absolute right-0 w-[240px] bg-darkBlue p-4 ${showNav2? '' : 'hidden'} gap-2` }>           
-              <div className='flex flex-col border-b border-slate-400 p-3'>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-              <div className='flex flex-col border-b border-slate-400 p-3 '>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-              <div className='flex flex-col border-b border-slate-400 p-3'>
-                <span className='text-white text-[16px]'>Kefe sent you a Message</span>
-                <span className='text-[14px]'>15 minutes ago</span>
-              </div>
-          </div>  
-       </div>
-        <div className='relative'>
-          <div className='hover:text-red-700 flex gap-2 items-center ' onClick={() => setShowNav3((prev) => !prev)}>
-            <span className='w-[30px] h-[30px] rounded-full bg-black text-xl'><CgProfile className='w-full h-full'/></span>
-            <span>Your Profile</span>
-            {showNav3? <FaCaretUp /> : <FaCaretDown/> }
-          </div>
-          <div className={`absolute right-0 w-[240px] bg-darkBlue p-4 ${showNav3? '' : 'hidden'} p-2` }>
-            <div className='flex items-start gap-2 p-2 hover:bg-black'>
-             Profile
-            </div>
-            <div className='flex items-start gap-2 p-2 border-b-slate-500 hover:bg-black'>
-             Settings
-            </div>
-            <div className='flex items-start gap-2 p-2 hover:bg-black '>
-              Logout
-            </div>
-          </div>
-        </div>
-        </div>
-  
-    </nav>
+   <div>
+    <div className='bg-black text-slate-500 relative ' >
+     <Header />
     <main className='p-5 flex flex-col gap-8'>
    <div>
     <div className='flex gap-6 text-[20px] items-center'>
@@ -179,9 +99,11 @@ function Dashboard() {
       </div>
      </div>
      <div className='flex-1 flex gap-4 text-center items-center'>
-      <div className='flex-1 flex flex-col gap-3 bg-darkBlue p-6 rounded-xl'>
-        <span> Create a new Project </span>
-        <CiCirclePlus className='text-red-700 text-[50px]  text-center block m-auto ' />
+      <div onClick={() => {setShowNew((prev) => !prev)
+      setShowNewProject(false)
+      }} className='flex-1 flex flex-col gap-3 bg-darkBlue p-4 rounded-xl'>
+        <span> Create <br /> new project </span>
+        <CiCirclePlus className='text-red-700 text-[40px]  text-center block m-auto ' />
       </div>
       <div className='flex-1 bg-darkBlue p-6 rounded-xl'>
        <span>Upcoming Task</span>
@@ -591,16 +513,44 @@ function Dashboard() {
     </div>
    </div>
     </main>
-    <footer className='p-5 flex justify-between'>
-      <div className='flex gap-3'>
-        &copy;
-        <div><span className='text-red-700'>Kingswrld,</span> All rights reserved</div>
+    <Footer />
+
+    <div id="new-project" className={`h-[100vh] w-[25vw] ${showNew ? ' right-0 z-10' : 'right-[-400px]'}  bg-black top-0 fixed flex justify-center items-center transition-all duration-75 ease-in`}>
+      {showNew ? <FaXmark className='absolute top-2 text-slate-200'  onClick={() => setShowNew((prev) => !prev)} /> : ''}
+      <div className='text-center w-[70%] text-slate-200 flex flex-col gap-10 '>
+      <h2 className='font-bold text-[20px]'>Track<span className='text-red-700'>Max</span></h2>
+      <div className='flex flex-col gap-9'>
+        <div className='border border-slate-200 p-3 rounded-xl hover:text-black hover:bg-slate-200 ' onClick={() => {
+          setShowNewProject((prev) => !prev)}}>Create a new project</div>
+        <div className='border border-slate-200 p-3 rounded-xl  hover:text-black hover:bg-slate-200'>Add a new task</div>
       </div>
-      <div className='flex flex-col '>
-        <span>Template By <span className='text-red-700'> HTML Codex</span></span>
-        <span>Copied from <span className='text-red-700'> ThemeWagon </span> </span>
       </div>
-    </footer>
+
+      <div id="new-project" className={`h-[100vh] w-[25vw] ${showNewProject ? ' right-0' : 'right-[-400px]'}  bg-black top-0 fixed flex justify-center items-center text-center transition-all duration-75 ease-in border-slate-200 text-slate-200`}>
+         <div className='flex flex-col w-[80%] gap-[20px]'>
+         <h2 className='font-bold text-[20px]'>Track<span className='text-red-700'>Max</span></h2>
+         <form className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-2'>
+              <label>Project Name</label>
+              <input type="text" className='bg-black border p-[6px]' />
+            </div>
+            <div className='flex flex-col gap-2'>
+              <label>Project Budget</label>
+              <input type="text" className='bg-black border p-[6px]' />
+            </div>
+            <div className='flex flex-col gap-2'>
+              <label>Project Start Date</label>
+              <input type="text" className='bg-black border p-[6px]' />
+            </div>
+            <div className='flex flex-col gap-2'>
+              <label>Project Completion Date</label>
+              <input type="text" className='bg-black border p-[6px]' />
+            </div>
+          </form>
+         </div>
+      </div>
+    </div>
+   </div>
    </div>
   );
 }
