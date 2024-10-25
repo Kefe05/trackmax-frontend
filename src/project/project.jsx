@@ -105,7 +105,7 @@ function Project() {
       </nav>
       <main  className='flex gap-10 p-6'>
         <div className='flex-1 flex flex-col gap-4'>
-          <h2  className='text-red-700 text-2xl text-start font-bold text-center'>Projects</h2>
+          <h2  className='text-red-700 text-2xl text-start font-bold '>Projects</h2>
           <div className='bg-darkBlue flex flex-col p-6'>
            <AllProject></AllProject>
            <button className='bg-red-700 w-[100px] p-4 m-auto text-[16px] rounded-xl font-semibold'>Add Task</button>

@@ -39,11 +39,11 @@ function Dashboard() {
   // Update chart data on component mount
   useEffect(() => {
     setNewChart({
-      labels: expense.map((data) => data.month),
+      labels: expense.map((data) => data.expenseType),
       datasets: [
         {
           label: 'Expenses $',
-          data: expense.map((data) => data.expense),
+          data: expense.map((data) => data.amount),
           backgroundColor: 'rgba(255,0,0,0.4)',
           borderColor: 'rgba(115,112,124,0.4)',
           borderWidth: 2,

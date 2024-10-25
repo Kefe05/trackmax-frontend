@@ -1,11 +1,10 @@
 export const expense = [
-  { month: 'January', expense: 500},
-  { month: 'February', expense: 700},
-  { month: 'March', expense: 400},
-  { month: 'April', expense: 800 },
-  { month: 'May', expense: 600 },
-  { month: 'June', expense: 750 },
-  { month: 'July', expense: 900 },
+  {expenseType: 'Transport', amount: 400},
+  {expenseType: 'Food', amount: 700},
+  {expenseType: 'Clothing', amount: 300},
+  {expenseType: 'Rent', amount: 900},
+  {expenseType: 'Bills', amount: 600},
+  {expenseType: 'Fees', amount: 500}
 ];
 
 export const expenseData = [

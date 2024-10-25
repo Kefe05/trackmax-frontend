@@ -23,8 +23,8 @@ function Index() {
           <span className='hover:text-red-700'>About Us</span>
         </div>
         <div className='flex gap-7'>
-          <Link to='/login' className='p-3 w-[100px] text-center hover:border hover:border-slate-200 rounded-xl'>Login</Link>
-          <Link to='/register' className='p-3 w-[100px] text-center hover:border hover:border-white rounded-xl'>Sign Up</Link>
+          <Link to='/login' className='p-3 w-[100px] text-center border border-slate-200 rounded-xl'>Login</Link>
+          <Link to='/register' className='p-3 w-[100px] text-center border border-white rounded-xl'>Sign Up</Link>
           </div>
       </header>
       <hr className='text-slate-500'/>
